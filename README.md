@@ -2,6 +2,3 @@
 testes citados do capítulo 2 
 
 
-
-Os arquivos são por país
-
