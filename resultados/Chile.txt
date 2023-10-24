@@ -1,0 +1,57 @@
+> Chile_fit <- cfa(modelo_afc, data = Chile)
+> summary(Chile_fit, standardized = TRUE)
+lavaan 0.6.15 ended normally after 28 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           824
+
+Model Test User Model:
+                                                      
+  Test statistic                                58.234
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.000
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst =~                                                        
+    P16TGB.B               1.000                               0.396    0.468
+    P19ST.C                1.017    0.113    9.020    0.000    0.402    0.534
+    P16ST.F                1.442    0.157    9.187    0.000    0.570    0.735
+    P19N.H                 0.925    0.111    8.343    0.000    0.366    0.459
+  QuestõesEconômicas =~                                                      
+    P46N.C                 1.000                               0.904    1.000
+  CasGay =~                                                                  
+    P69ST.C                1.000                               0.953    1.000
+
+Covariances:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst ~~                                                        
+    QuestõesEconômicas     0.058    0.016    3.636    0.000    0.163    0.163
+    CasGay                -0.041    0.016   -2.522    0.012   -0.110   -0.110
+  QuestõesEconômicas ~~                                                      
+    CasGay                 0.092    0.030    3.054    0.002    0.107    0.107
+
+Variances:
+                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .P16TGB.B              0.557    0.032   17.382    0.000    0.557    0.781
+   .P19ST.C               0.406    0.025   15.954    0.000    0.406    0.715
+   .P16ST.F               0.277    0.032    8.694    0.000    0.277    0.460
+   .P19N.H                0.503    0.029   17.550    0.000    0.503    0.790
+   .P46N.C                0.000                               0.000    0.000
+   .P69ST.C               0.000                               0.000    0.000
+    DesconfiançaInst      0.157    0.028    5.690    0.000    1.000    1.000
+    QuestõesEconômicas    0.818    0.040   20.298    0.000    1.000    1.000
+    CasGay                0.907    0.045   20.298    0.000    1.000    1.000
+
+> semTools::fitmeasures(Chile_fit, c("tli", "cfi", "rmsea", "srmr"))
+  tli   cfi rmsea  srmr 
+0.793 0.889 0.087 0.049 

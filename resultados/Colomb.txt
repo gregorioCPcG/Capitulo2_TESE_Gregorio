@@ -1,0 +1,57 @@
+> Colomb_fit <- cfa(modelo_afc, data = Colomb)
+> summary(Colomb_fit, standardized = TRUE)
+lavaan 0.6.15 ended normally after 30 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           996
+
+Model Test User Model:
+                                                      
+  Test statistic                                23.159
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.003
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst =~                                                        
+    P16TGB.B               1.000                               0.448    0.471
+    P19ST.C                1.163    0.110   10.583    0.000    0.521    0.700
+    P16ST.F                1.144    0.108   10.589    0.000    0.512    0.630
+    P19N.H                 0.967    0.105    9.206    0.000    0.433    0.457
+  QuestõesEconômicas =~                                                      
+    P46N.C                 1.000                               0.789    1.000
+  CasGay =~                                                                  
+    P69ST.C                1.000                               0.866    1.000
+
+Covariances:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst ~~                                                        
+    QuestõesEconômicas     0.047    0.014    3.319    0.001    0.132    0.132
+    CasGay                -0.015    0.015   -1.000    0.317   -0.038   -0.038
+  QuestõesEconômicas ~~                                                      
+    CasGay                 0.066    0.022    3.031    0.002    0.096    0.096
+
+Variances:
+                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .P16TGB.B              0.702    0.036   19.257    0.000    0.702    0.778
+   .P19ST.C               0.283    0.024   11.691    0.000    0.283    0.511
+   .P16ST.F               0.399    0.027   14.679    0.000    0.399    0.603
+   .P19N.H                0.712    0.036   19.509    0.000    0.712    0.792
+   .P46N.C                0.000                               0.000    0.000
+   .P69ST.C               0.000                               0.000    0.000
+    DesconfiançaInst      0.201    0.031    6.389    0.000    1.000    1.000
+    QuestõesEconômicas    0.623    0.028   22.316    0.000    1.000    1.000
+    CasGay                0.749    0.034   22.316    0.000    1.000    1.000
+
+> semTools::fitmeasures(Colomb_fit, c("tli", "cfi", "rmsea", "srmr"))
+  tli   cfi rmsea  srmr 
+0.947 0.972 0.044 0.025

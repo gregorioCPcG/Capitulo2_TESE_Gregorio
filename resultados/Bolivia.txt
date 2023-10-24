@@ -1,0 +1,57 @@
+> Bolivia_fit <- cfa(modelo_afc, data = Bolivia)
+> summary(Bolivia_fit, standardized = TRUE)
+lavaan 0.6.15 ended normally after 27 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           810
+
+Model Test User Model:
+                                                      
+  Test statistic                                28.553
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.000
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst =~                                                        
+    P16TGB.B               1.000                               0.388    0.487
+    P19ST.C                1.086    0.119    9.101    0.000    0.421    0.547
+    P16ST.F                1.281    0.136    9.416    0.000    0.497    0.601
+    P19N.H                 1.379    0.144    9.543    0.000    0.535    0.651
+  QuestõesEconômicas =~                                                      
+    P46N.C                 1.000                               0.793    1.000
+  CasGay =~                                                                  
+    P69ST.C                1.000                               0.783    1.000
+
+Covariances:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst ~~                                                        
+    QuestõesEconômicas     0.028    0.013    2.122    0.034    0.093    0.093
+    CasGay                -0.001    0.013   -0.043    0.966   -0.002   -0.002
+  QuestõesEconômicas ~~                                                      
+    CasGay                 0.053    0.022    2.421    0.015    0.085    0.085
+
+Variances:
+                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .P16TGB.B              0.484    0.029   16.961    0.000    0.484    0.763
+   .P19ST.C               0.415    0.026   15.702    0.000    0.415    0.701
+   .P16ST.F               0.436    0.031   14.173    0.000    0.436    0.639
+   .P19N.H                0.389    0.031   12.451    0.000    0.389    0.576
+   .P46N.C                0.000                               0.000    0.000
+   .P69ST.C               0.000                               0.000    0.000
+    DesconfiançaInst      0.150    0.026    5.888    0.000    1.000    1.000
+    QuestõesEconômicas    0.629    0.031   20.125    0.000    1.000    1.000
+    CasGay                0.613    0.030   20.125    0.000    1.000    1.000
+
+> semTools::fitmeasures(Bolivia_fit, c("tli", "cfi", "rmsea", "srmr"))
+  tli   cfi rmsea  srmr 
+0.913 0.953 0.056 0.031 

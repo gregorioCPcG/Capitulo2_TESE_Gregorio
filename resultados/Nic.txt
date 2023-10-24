@@ -1,0 +1,56 @@
+> summary(Nic_fit, standardized = TRUE)
+lavaan 0.6.15 ended normally after 25 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           755
+
+Model Test User Model:
+                                                      
+  Test statistic                                25.327
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.001
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst =~                                                        
+    P16TGB.B               1.000                               0.618    0.585
+    P19ST.C                1.120    0.081   13.810    0.000    0.693    0.737
+    P16ST.F                1.049    0.081   12.998    0.000    0.648    0.656
+    P19N.H                 1.292    0.092   13.996    0.000    0.799    0.768
+  QuestõesEconômicas =~                                                      
+    P46N.C                 1.000                               0.733    1.000
+  CasGay =~                                                                  
+    P69ST.C                1.000                               0.714    1.000
+
+Covariances:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst ~~                                                        
+    QuestõesEconômicas     0.058    0.019    3.047    0.002    0.127    0.127
+    CasGay                 0.031    0.018    1.706    0.088    0.070    0.070
+  QuestõesEconômicas ~~                                                      
+    CasGay                -0.025    0.019   -1.299    0.194   -0.047   -0.047
+
+Variances:
+                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .P16TGB.B              0.737    0.044   16.770    0.000    0.737    0.658
+   .P19ST.C               0.405    0.031   13.069    0.000    0.405    0.457
+   .P16ST.F               0.557    0.036   15.496    0.000    0.557    0.570
+   .P19N.H                0.444    0.038   11.795    0.000    0.444    0.410
+   .P46N.C                0.000                               0.000    0.000
+   .P69ST.C               0.000                               0.000    0.000
+    DesconfiançaInst      0.382    0.049    7.851    0.000    1.000    1.000
+    QuestõesEconômicas    0.538    0.028   19.429    0.000    1.000    1.000
+    CasGay                0.510    0.026   19.429    0.000    1.000    1.000
+
+> semTools::fitmeasures(Nic_fit, c("tli", "cfi", "rmsea", "srmr"))
+  tli   cfi rmsea  srmr 
+0.961 0.979 0.054 0.023 

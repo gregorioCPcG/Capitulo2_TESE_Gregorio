@@ -1,0 +1,56 @@
+> summary(Argentina_fit, standardized = TRUE)
+lavaan 0.6.15 ended normally after 27 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           885
+
+Model Test User Model:
+                                                      
+  Test statistic                                57.035
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.000
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst =~                                                        
+    P16TGB.B               1.000                               0.308    0.340
+    P19ST.C                1.817    0.227    8.019    0.000    0.560    0.674
+    P16ST.F                1.631    0.207    7.871    0.000    0.503    0.602
+    P19N.H                 1.933    0.241    8.020    0.000    0.596    0.675
+  QuestõesEconômicas =~                                                      
+    P46N.C                 1.000                               0.774    1.000
+  CasGay =~                                                                  
+    P69ST.C                1.000                               0.940    1.000
+
+Covariances:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst ~~                                                        
+    QuestõesEconômicas     0.054    0.011    4.748    0.000    0.227    0.227
+    CasGay                 0.039    0.012    3.100    0.002    0.133    0.133
+  QuestõesEconômicas ~~                                                      
+    CasGay                 0.090    0.025    3.649    0.000    0.124    0.124
+
+Variances:
+                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .P16TGB.B              0.729    0.037   19.894    0.000    0.729    0.885
+   .P19ST.C               0.377    0.029   13.213    0.000    0.377    0.546
+   .P16ST.F               0.446    0.028   15.815    0.000    0.446    0.638
+   .P19N.H                0.425    0.032   13.177    0.000    0.425    0.544
+   .P46N.C                0.000                               0.000    0.000
+   .P69ST.C               0.000                               0.000    0.000
+    DesconfiançaInst      0.095    0.022    4.361    0.000    1.000    1.000
+    QuestõesEconômicas    0.599    0.028   21.036    0.000    1.000    1.000
+    CasGay                0.883    0.042   21.036    0.000    1.000    1.000
+    
+    > semTools::fitmeasures(Argentina_fit, c("tli", "cfi", "rmsea", "srmr"))
+  tli   cfi rmsea  srmr 
+0.847 0.919 0.083 0.047 

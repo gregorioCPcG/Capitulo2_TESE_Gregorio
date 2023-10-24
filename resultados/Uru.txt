@@ -1,0 +1,57 @@
+> Uru_fit <- cfa(modelo_afc, data = Uru)
+> summary(Uru_fit, standardized = TRUE)
+lavaan 0.6.15 ended normally after 25 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           857
+
+Model Test User Model:
+                                                      
+  Test statistic                                25.733
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.001
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst =~                                                        
+    P16TGB.B               1.000                               0.329    0.369
+    P19ST.C                1.856    0.214    8.688    0.000    0.611    0.686
+    P16ST.F                1.939    0.223    8.710    0.000    0.638    0.710
+    P19N.H                 1.552    0.184    8.421    0.000    0.511    0.592
+  QuestõesEconômicas =~                                                      
+    P46N.C                 1.000                               0.758    1.000
+  CasGay =~                                                                  
+    P69ST.C                1.000                               0.837    1.000
+
+Covariances:
+                        Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+  DesconfiançaInst ~~                                                        
+    QuestõesEconômicas     0.048    0.011    4.274    0.000    0.193    0.193
+    CasGay                 0.028    0.011    2.414    0.016    0.100    0.100
+  QuestõesEconômicas ~~                                                      
+    CasGay                 0.076    0.022    3.474    0.001    0.120    0.120
+
+Variances:
+                       Estimate  Std.Err  z-value  P(>|z|)   Std.lv  Std.all
+   .P16TGB.B              0.687    0.035   19.449    0.000    0.687    0.864
+   .P19ST.C               0.419    0.032   12.999    0.000    0.419    0.529
+   .P16ST.F               0.401    0.033   12.006    0.000    0.401    0.496
+   .P19N.H                0.483    0.030   16.210    0.000    0.483    0.649
+   .P46N.C                0.000                               0.000    0.000
+   .P69ST.C               0.000                               0.000    0.000
+    DesconfiançaInst      0.108    0.023    4.744    0.000    1.000    1.000
+    QuestõesEconômicas    0.575    0.028   20.700    0.000    1.000    1.000
+    CasGay                0.701    0.034   20.700    0.000    1.000    1.000
+
+> semTools::fitmeasures(Uru_fit, c("tli", "cfi", "rmsea", "srmr"))
+  tli   cfi rmsea  srmr 
+0.944 0.970 0.051 0.033 
